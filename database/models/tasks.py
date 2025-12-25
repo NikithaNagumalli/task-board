@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class Task(BaseModel):
-    task_id: str
+class DB_Task(BaseModel):
+    id: str
     content: str
     column: str

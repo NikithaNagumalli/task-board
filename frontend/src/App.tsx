@@ -23,6 +23,7 @@ type ColumnKey = "todo" | "inProgress" | "done";
 type Task = {
   id: string;
   content: string;
+  column: ColumnKey;
 };
 
 type Column = {
@@ -68,7 +69,8 @@ function App() {
     const updatedColumns = {...columns};
     const taskToAdd = {
       id: Date.now().toString(),
-      content: newTask
+      content: newTask,
+      column: activeColumn
     }
     updatedColumns[activeColumn].items.push(taskToAdd)
 
